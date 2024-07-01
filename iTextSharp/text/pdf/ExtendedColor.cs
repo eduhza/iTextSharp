@@ -1,7 +1,3 @@
-using System;
-
-using iTextSharp.text;
-
 /*
  * $Id: ExtendedColor.cs,v 1.4 2008/05/13 11:25:17 psoares33 Exp $
  * 
@@ -52,45 +48,53 @@ using iTextSharp.text;
  * http://www.lowagie.com/iText/
  */
 
-namespace iTextSharp.text.pdf {
+namespace iTextSharp.text.pdf
+{
 
     /**
      *
      * @author  Paulo Soares (psoares@consiste.pt)
      */
     //public class ExtendedColor : Color {
-    public abstract class ExtendedColor : Color {
-    
+    public abstract class ExtendedColor : BaseColor
+    {
+
         internal const int TYPE_RGB = 0;
         internal const int TYPE_GRAY = 1;
         internal const int TYPE_CMYK = 2;
         internal const int TYPE_SEPARATION = 3;
         internal const int TYPE_PATTERN = 4;
         internal const int TYPE_SHADING = 5;
-    
+
         protected int type;
 
-        public ExtendedColor(int type) : base(0, 0, 0) {
+        public ExtendedColor(int type) : base(0, 0, 0)
+        {
             this.type = type;
         }
-    
-        public ExtendedColor(int type, float red, float green, float blue) : base(Normalize(red), Normalize(green), Normalize(blue)) {
+
+        public ExtendedColor(int type, float red, float green, float blue) : base(Normalize(red), Normalize(green), Normalize(blue))
+        {
             this.type = type;
         }
-    
-        public int Type {
-            get {
+
+        public int Type
+        {
+            get
+            {
                 return type;
             }
         }
-    
-        public static int GetType(object color) {
+
+        public static int GetType(object color)
+        {
             if (color is ExtendedColor)
                 return ((ExtendedColor)color).Type;
             return TYPE_RGB;
         }
 
-        internal static float Normalize(float value) {
+        internal static float Normalize(float value)
+        {
             if (value < 0)
                 return 0;
             if (value > 1)

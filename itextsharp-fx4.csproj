@@ -21,7 +21,7 @@
     <StartupObject />
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>
@@ -137,6 +137,7 @@
     <Compile Include="iTextSharp\text\BadElementException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="iTextSharp\text\BaseColor.cs" />
     <Compile Include="iTextSharp\text\Cell.cs">
       <SubType>Code</SubType>
     </Compile>
