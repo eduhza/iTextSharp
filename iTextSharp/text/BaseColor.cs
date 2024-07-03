@@ -8,19 +8,19 @@ namespace iTextSharp.text
     /// </summary>
     public class BaseColor : Color
     {
-        public static readonly BaseColor WHITE = new BaseColor(255, 255, 255);
-        public static readonly BaseColor LIGHT_GRAY = new BaseColor(192, 192, 192);
-        public static readonly BaseColor GRAY = new BaseColor(128, 128, 128);
-        public static readonly BaseColor DARK_GRAY = new BaseColor(64, 64, 64);
-        public static readonly BaseColor BLACK = new BaseColor(0, 0, 0);
-        public static readonly BaseColor RED = new BaseColor(255, 0, 0);
-        public static readonly BaseColor PINK = new BaseColor(255, 175, 175);
-        public static readonly BaseColor ORANGE = new BaseColor(255, 200, 0);
-        public static readonly BaseColor YELLOW = new BaseColor(255, 255, 0);
-        public static readonly BaseColor GREEN = new BaseColor(0, 255, 0);
-        public static readonly BaseColor MAGENTA = new BaseColor(255, 0, 255);
-        public static readonly BaseColor CYAN = new BaseColor(0, 255, 255);
-        public static readonly BaseColor BLUE = new BaseColor(0, 0, 255);
+        public static new readonly BaseColor WHITE = new BaseColor(255, 255, 255);
+        public static new readonly BaseColor LIGHT_GRAY = new BaseColor(192, 192, 192);
+        public static new readonly BaseColor GRAY = new BaseColor(128, 128, 128);
+        public static new readonly BaseColor DARK_GRAY = new BaseColor(64, 64, 64);
+        public static new readonly BaseColor BLACK = new BaseColor(0, 0, 0);
+        public static new readonly BaseColor RED = new BaseColor(255, 0, 0);
+        public static new readonly BaseColor PINK = new BaseColor(255, 175, 175);
+        public static new readonly BaseColor ORANGE = new BaseColor(255, 200, 0);
+        public static new readonly BaseColor YELLOW = new BaseColor(255, 255, 0);
+        public static new readonly BaseColor GREEN = new BaseColor(0, 255, 0);
+        public static new readonly BaseColor MAGENTA = new BaseColor(255, 0, 255);
+        public static new readonly BaseColor CYAN = new BaseColor(0, 255, 255);
+        public static new readonly BaseColor BLUE = new BaseColor(0, 0, 255);
         private const double FACTOR = 0.7;
         private int value;
 
@@ -99,7 +99,7 @@ namespace iTextSharp.text
          *
          * @return the value for red
          */
-        virtual public int R
+        virtual public new int R
         {
             get { return (RGB >> 16) & 0xFF; }
         }
@@ -107,7 +107,7 @@ namespace iTextSharp.text
          *
          * @return the value for green
          */
-        virtual public int G
+        virtual public new int G
         {
             get { return (RGB >> 8) & 0xFF; }
         }
@@ -115,7 +115,7 @@ namespace iTextSharp.text
          *
          * @return the value for blue
          */
-        virtual public int B
+        virtual public new int B
         {
             get { return (RGB >> 0) & 0xFF; }
         }
@@ -132,7 +132,7 @@ namespace iTextSharp.text
          * Make this BaseColor brighter. Factor used is 0.7.
          * @return the new BaseColor
          */
-        virtual public BaseColor Brighter()
+        virtual public new BaseColor Brighter()
         {
             int r = R;
             int g = G;
@@ -159,7 +159,7 @@ namespace iTextSharp.text
          * Make this color darker. Factor used is 0.7
          * @return the new BaseColor
          */
-        virtual public BaseColor Darker()
+        virtual public new BaseColor Darker()
         {
             return new BaseColor(Math.Max((int)(R * FACTOR), 0),
                     Math.Max((int)(G * FACTOR), 0),
@@ -167,7 +167,7 @@ namespace iTextSharp.text
         }
 
         [Obsolete("Use RGB instead")]
-        virtual public int ToArgb()
+        virtual public new int ToArgb()
         {
             return value;
         }
