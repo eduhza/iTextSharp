@@ -107,6 +107,7 @@ namespace iTextSharp.text.pdf {
             ArrayList tParents = parents;
             ArrayList tPages = pages;
             ArrayList nextParents = new ArrayList();
+            var iteracao = 0;
             while (true) {
                 leaf *= leafSize;
                 int stdCount = leafSize;
@@ -142,6 +143,11 @@ namespace iTextSharp.text.pdf {
                 }
                 if (tParents.Count == 1) {
                     topParent = (PdfIndirectReference)tParents[0];
+                    return topParent;
+                }
+                else if (iteracao >= 100)
+                {
+                    topParent = (PdfIndirectReference)tParents[tParents.Count];
                     return topParent;
                 }
                 tPages = tParents;
