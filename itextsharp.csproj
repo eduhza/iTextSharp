@@ -134,6 +134,7 @@
     <Compile Include="iTextSharp\text\BadElementException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="iTextSharp\text\BaseColor.cs" />
     <Compile Include="iTextSharp\text\Cell.cs">
       <SubType>Code</SubType>
     </Compile>
